@@ -1,0 +1,41 @@
+label{
+    display: flex;
+}
+.check-lables{
+    margin-right: 22px;
+}
+.form-check{
+    display: flex;
+    
+}
+button{
+    display: flex;
+    background-color: #468cd8;
+}
+.card-container{
+    margin-top: 50px;
+    border: 1px solid lightgrey;
+    .header{
+        width: 100%;
+        padding: 10px;
+        background-color: lightgrey;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h5{
+            color:#468cd8;
+        }
+    }
+    .body{
+        padding: 15px;
+        .error-confirm-password{
+            display: flex;
+            font-size: 12px;
+            color: red;
+            margin: 0px;
+        }
+    }
+}
+.is-invalid{
+    border: 1px solid red;
+}

@@ -1,0 +1,196 @@
+<div class="container">
+  <div class="card-container">
+    <div class="header">
+      <h5>اضافة موظف جديد</h5>
+      <button class="btn btn-primary" [routerLink]="['/employees']">
+        عرض الكل
+      </button>
+    </div>
+
+    <div class="body">
+      <form [formGroup]="employeeForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">الاسم</label>
+            <input
+              formControlName="name"
+              type="text"
+              class="form-control"
+              id="inputEmail4"
+              placeholder="الاسم"
+              [ngClass]="{
+                'is-invalid':
+                  (employeeForm.get('name').touched ||
+                    employeeForm.get('name').dirty) &&
+                  !employeeForm.get('name').valid
+              }"
+            />
+            <p
+              class="error-confirm-password"
+              *ngIf="
+                employeeForm.get('name').touched &&
+                employeeForm.get('name').invalid
+              "
+            >
+              الاسم مطلوب
+            </p>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlSelect1">الوظيفة</label>
+            <select
+              class="form-control"
+              formControlName="job"
+              id="exampleFormControlSelect1"
+              [ngClass]="{
+                'is-invalid':
+                  (employeeForm.get('job').touched ||
+                    employeeForm.get('job').dirty) &&
+                  !employeeForm.get('job').valid
+              }"
+            >
+              <option value="designer" [selected]="true">designer</option>
+              <option value="tester">tester</option>
+              <option value="developer">developer</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">البريد الالكتروني</label>
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              id="inputEmail4"
+              placeholder="البريد الالكتروني"
+              [ngClass]="{
+                'is-invalid':
+                  (employeeForm.get('email').touched ||
+                    employeeForm.get('email').dirty) &&
+                  !employeeForm.get('email').valid
+              }"
+            />
+            <p
+              class="error-confirm-password"
+              *ngIf="
+                employeeForm.get('email').touched &&
+                employeeForm.get('email').invalid
+              "
+            >
+              البريد الالكتروني مطلوب
+            </p>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">موبايل</label>
+            <input
+              formControlName="mobile"
+              type="text"
+              class="form-control"
+              id="inputEmail4"
+              placeholder="موبايل"
+              [ngClass]="{
+                'is-invalid':
+                  (employeeForm.get('mobile').touched ||
+                    employeeForm.get('mobile').dirty) &&
+                  !employeeForm.get('mobile').valid
+              }"
+            />
+            <p
+              class="error-confirm-password"
+              *ngIf="
+                employeeForm.get('mobile').touched &&
+                employeeForm.get('mobile').invalid
+              "
+            >
+              موبايل مطلوب
+            </p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"> الرقم القومي</label>
+            <input
+              formControlName="nationalId"
+              type="text"
+              class="form-control"
+              id="inputEmail4"
+              placeholder="الرقم القومي"
+              [ngClass]="{
+                'is-invalid':
+                  (employeeForm.get('nationalId').touched ||
+                    employeeForm.get('nationalId').dirty) &&
+                  !employeeForm.get('nationalId').valid
+              }"
+            />
+            <p
+              class="error-confirm-password"
+              *ngIf="
+                employeeForm.get('nationalId').touched &&
+                employeeForm.get('nationalId').invalid
+              "
+            >
+              الرقم القومي مطلوب
+            </p>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"> النوع</label>
+            <div class="form-row">
+              <div class="form-check">
+                <label
+                  class="form-check-label check-lables"
+                  for="exampleRadios1"
+                >
+                  ذكر
+                </label>
+                <input
+                  formControlName="gender"
+                  class="form-check-input"
+                  type="radio"
+                  id="exampleRadios1"
+                  value="male"
+                />
+              </div>
+              <div class="form-check">
+                <label
+                  class="form-check-label check-lables"
+                  for="exampleRadios2"
+                >
+                  انثي
+                </label>
+                <input
+                  formControlName="gender"
+                  class="form-check-input"
+                  type="radio"
+                  id="exampleRadios2"
+                  value="female"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-check-label" for="gridCheck">الحالة </label>
+          <div class="form-check">
+            <input
+              formControlName="status"
+              class="form-check-input"
+              type="checkbox"
+              id="gridCheck"
+              checked
+            />
+            <label class="form-check-label check-lables" for="gridCheck">
+              مفعل
+            </label>
+          </div>
+        </div>
+        <button
+          [disabled]="!employeeForm.valid"
+          (click)="onAddEmployee()"
+          class="btn btn-primary"
+        >
+          اضافه
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

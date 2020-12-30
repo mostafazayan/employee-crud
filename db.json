@@ -1,0 +1,14 @@
+{
+  "employees": [
+    {
+      "name": "mostafaaaa",
+      "job": "developer",
+      "email": "mostafa.zayan@hotmail.com",
+      "mobile": "01231313212",
+      "gender": "male",
+      "nationalId": "65464646464545",
+      "status": true,
+      "id": 1
+    }
+  ]
+}
